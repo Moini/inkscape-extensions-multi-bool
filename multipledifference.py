@@ -5,6 +5,8 @@ between the top shape in the z-order, and each of the shapes underneath.
 """
 import inkex, os, csv, math
 from subprocess import Popen, PIPE
+from lxml import etree
+from shutil import copy2
 
 class MultipleDifference(inkex.Effect):
     def __init__(self):
@@ -13,12 +15,15 @@ class MultipleDifference(inkex.Effect):
     def effect(self):
     
         file = self.args[-1]
+        tempfile = os.path.splitext(file)[0] + "-multidiff.svg"
 
         p = Popen('inkscape --query-all '+file, shell=True, stdout=PIPE, stderr=PIPE)
         err = p.stderr
         f = p.communicate()[0]
         lines=csv.reader(f.split(os.linesep))
         err.close() 
+
+        copy2(file, tempfile)
 
         documentobjects = []
         for line in lines:
@@ -39,11 +44,13 @@ class MultipleDifference(inkex.Effect):
                         first = False
                     else:
                         commandstring = commandstring + "--select="+toppath+" --verb=EditDuplicate --select="+o+" --verb=SelectionDiff --verb=EditDeselect "
-            
-            p = Popen(commandstring+file, shell=True, stdout=PIPE, stderr=PIPE)
+            commandstring += "--verb=FileSave --verb=FileQuit "
+            p = Popen(commandstring+tempfile, shell=True, stdout=PIPE, stderr=PIPE)
             err = p.stderr
             f = p.communicate()[0]
             err.close()
+            
+            self.document = etree.parse(tempfile)
             
 if __name__ == '__main__':
     e = MultipleDifference()
