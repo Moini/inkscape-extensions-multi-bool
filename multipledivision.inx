@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Multiple Division</_name>
+    <id>org.inkscape.filter.multipledivision</id>
+	<dependency type="executable" location="extensions">multipledivision.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+    <effect>
+	<object-type>path</object-type>
+	<effects-menu>
+		<submenu _name="Boolean"/>
+	</effects-menu>
+	</effect>
+    <script>
+        <command reldir="extensions" interpreter="python">multipledivision.py</command>
+    </script>
+</inkscape-extension>
