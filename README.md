@@ -31,7 +31,6 @@ Known Issues:
 -   Does not give any error messages.
 -   Does not recurse into groups.
 -   Is probably slow on large files, as it replaces the file's contents by the contents of an edited temporary file.
--   Does not have a licence yet. Forking / Editing is allowed on github.
 
 Licence:
 ========
