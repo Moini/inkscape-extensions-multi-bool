@@ -2,7 +2,7 @@
 
 #    Inkscape Multi-Bool extension for Inkscape 0.91
 #    Copyright (C) 2014  Ryan Lerch (multiple difference)
-#                  2016  Maren Hachmann (refactoring, extend to multibool)
+#                  2016  Maren Hachmann <marenhachmannATyahoo.com> (refactoring, extend to multibool)
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
