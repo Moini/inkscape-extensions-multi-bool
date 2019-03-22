@@ -1,5 +1,11 @@
 inkscape-extension-multi-bool
-======================================
+=============================
+
+**Moved to [GitLab](https://gitlab.com/Moini/inkscape-extensions-multi-bool/)!**
+
+*This is an archived version of the extension. For the current one, visit [the new repository](https://gitlab.com/Moini/inkscape-extensions-multi-bool/).*
+
+-------
 
 Fork of Ryan Lerch's [multiple-difference Inkscape extension](https://github.com/ryanlerch/inkscape-extension-multiple-difference).
 
